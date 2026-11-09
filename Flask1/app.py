@@ -14,5 +14,13 @@ def about():
 def contact():
     return "This is the contact page"
 
+@app.route("/user/<name>")
+def user(name):
+    return f"This is {name}'s page"
+
+@app.route("/user/<name>/<bio>")
+def user_bio(name, bio):
+    return f"This is {name}'s {bio}"
+
 if __name__ == "__main__":
     app.run(debug=True)

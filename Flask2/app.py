@@ -16,7 +16,12 @@ def home():
 @app.route("/about")
 def about():
     logged_in = False
-    return render_template("about.html", title="About page", logged_in =logged_in)
+    items = ["Apple", "Orange", "Banana"]
+    students = {
+        "Enya": "Math",
+        "Kevin": "English :("
+    }
+    return render_template("about.html", title="About page", logged_in =logged_in, items = items, students=students)
 
 if __name__ == "__main__":
     app.run(debug=True)

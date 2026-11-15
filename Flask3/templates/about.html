@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html"%}
+
+    {% block content %}
+    <h3>Hobbies</h3>
+        <ul>
+            {% if descriptions.get("hobbies")%}
+                {% for hobby in descriptions.get("hobbies") %}
+                    <li>{{hobby}}</li>
+                {% endfor %}    
+            {% else %}
+                <li>You have no hobbies</li>
+            {% endif %}    
+        </ul>
+     <h3>Courses</h3>   
+        <ul>
+            {% if descriptions.get("courses")%}
+                {% for course in descriptions.get("courses")%}
+                    <li>{{course}}</li>
+                {% endfor %}
+            {% else %}
+                <li>You currently have no courses</li>
+            {% endif %}        
+        </ul>
+    {% endblock %}
+</body>
+</html>

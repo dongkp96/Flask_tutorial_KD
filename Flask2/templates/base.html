@@ -9,11 +9,8 @@
     <header>
         <h1>Flask Tutorial</h1>
     </header>
-    <nav> 
-        <a href="/">Home</a>
-        <a href ="/about">About </a>
-    </nav>
 
+    {% include "/components/nav.html"%}
     {% block content %}{% endblock %}
     
 </body>

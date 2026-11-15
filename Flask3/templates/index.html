@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask 3 home page</title>
-</head>
 <body>
     {% extends "base.html" %}
 
     {% block content %}
         <h2>Hello {{name}}</h2>
+        {% if info %}
         <p>You are {{info.age}} years old and you are
             {% if info.gender.upper() == M %}
                 a male
@@ -19,6 +13,9 @@
                 non binary
             {% endif %}    
         </p>
+        {% else %}
+        <p>You have no info</p>
+        {% endif %}
     {% endblock %}
 </body>
 </html>

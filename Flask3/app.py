@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, render_template_string
 app = Flask(__name__)
 
 @app.route("/")
@@ -31,6 +31,15 @@ def logged_in():
     return render_template("logged_in.html", username= username,
                             password = password)
 
-    
+
+@app.route("/file_upload", methods=['POST'])
+def file_upload():
+    return render_template_string("""
+    {% extends "base.html" %}
+    {% block content %}
+        <h1>Thank you for uploading a file</h1>
+    {% endblock %}
+    """)
+
 if __name__ == "__main__":
     app.run(debug=True)

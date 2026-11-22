@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>This is the info you logged in with</h1>
+<ul>
+    <li>Username = {{username}}</li>
+    <li>Password = {{password}}</li>
+    <li>Remember me? =
+        {% if remember_me %}
+            Yes
+        {% else %}
+            No
+        {% endif %}
+    </li>
+</ul>
+{% endblock %}
